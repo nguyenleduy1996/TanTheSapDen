@@ -7,15 +7,6 @@
             "id": "395b5a65-79af-4b51-96c9-808ec32fc2e1",
             "actions": [
                 {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "abc272ec-9c89-4e96-899f-a2d753f6aaf9",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Move",
                     "type": "Value",
                     "id": "1987b8dc-1874-4299-be92-05867deed321",
@@ -23,20 +14,18 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Attack",
+                    "type": "Button",
+                    "id": "c50db347-5421-470e-b3b1-80d76324a52d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "d1e7fabb-6d20-4ee8-81a0-e8a878c2d5e7",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "New action",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "2D Vector",
                     "id": "0e803891-da3c-46de-a104-3b6fa148f7fa",
@@ -91,6 +80,17 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "64815f07-cb27-402b-818e-61debfb955ba",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
