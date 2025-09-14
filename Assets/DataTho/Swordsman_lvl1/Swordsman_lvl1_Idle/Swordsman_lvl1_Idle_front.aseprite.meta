@@ -36,7 +36,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 32
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -97,9 +97,9 @@ ScriptedImporter:
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
-    addSortingGroup: 1
-    addShadowCasters: 0
-    generateIndividualEvents: 1
+    addSortingGroup: 0
+    addShadowCasters: 1
+    generateIndividualEvents: 0
     generateSpriteAtlas: 1
   importFileNodeState: 1
   platformSettingsDirtyTick: 638928782757702072
