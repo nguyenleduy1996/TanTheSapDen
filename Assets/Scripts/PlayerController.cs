@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float moveSpeed = 1f;
 
     private Rigidbody2D rb;
     private Animator animator;
