@@ -82,9 +82,9 @@ ScriptedImporter:
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
-    addSortingGroup: 1
-    addShadowCasters: 0
-    generateIndividualEvents: 1
+    addSortingGroup: 0
+    addShadowCasters: 1
+    generateIndividualEvents: 0
     generateSpriteAtlas: 1
   asepriteImporterSettings:
     fileImportMode: 1
