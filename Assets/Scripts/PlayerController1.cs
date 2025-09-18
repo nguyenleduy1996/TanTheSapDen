@@ -95,9 +95,6 @@ public class PlayerController1 : MonoBehaviour
                 idleAnim = "Swordsman_lvl1_Idle_back_Clip";
             else if (lastMoveDir.y < -0.5f)
                 idleAnim = "Swordsman_lvl1_Idle_front_Clip";
-
-            Console.WriteLine("Idle Animation Played: " + idleAnim);
-
             animator.Play(idleAnim);
         }
         else if (moveInput.magnitude > 0.5f)
