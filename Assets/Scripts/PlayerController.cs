@@ -5,7 +5,9 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour
 {
+    [Header("Player Settings")]
     public float moveSpeed = 1f;
+    public float attackSpeed = 1f;
 
     private Rigidbody2D rb;
     private Animator animator;
@@ -13,8 +15,10 @@ public class PlayerController : MonoBehaviour
 
     private HuongNhanVat _huongMatNhanVat;
     private bool _isMoving;
+    private bool _isAttack;
 
     private InputAction moveAction;
+    private InputAction attackAction;
 
     public enum HuongNhanVat { Trai = 1, Phai = 2, Len = 3, Xuong = 4 }
 
@@ -23,19 +27,33 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
+        // Move action với WASD
         moveAction = new InputAction("Move", InputActionType.Value);
         moveAction.AddCompositeBinding("2DVector")
             .With("Up", "<Keyboard>/w")
             .With("Down", "<Keyboard>/s")
             .With("Left", "<Keyboard>/a")
             .With("Right", "<Keyboard>/d");
+
+        // Attack action với J
+        attackAction = new InputAction("Attack", InputActionType.Button, "<Keyboard>/j");
     }
 
-    private void OnEnable() => moveAction.Enable();
-    private void OnDisable() => moveAction.Disable();
+    private void OnEnable()
+    {
+        moveAction.Enable();
+        attackAction.Enable();
+    }
+
+    private void OnDisable()
+    {
+        moveAction.Disable();
+        attackAction.Disable();
+    }
 
     private void Update()
     {
+        // --- Movement ---
         moveInput = moveAction.ReadValue<Vector2>();
         _isMoving = moveInput != Vector2.zero;
 
@@ -45,6 +63,16 @@ public class PlayerController : MonoBehaviour
                 _huongMatNhanVat = moveInput.x > 0 ? HuongNhanVat.Phai : HuongNhanVat.Trai;
             else
                 _huongMatNhanVat = moveInput.y > 0 ? HuongNhanVat.Len : HuongNhanVat.Xuong;
+        }
+
+        // --- Attack ---
+        if (attackAction.WasPressedThisFrame())
+        {
+            _isAttack = true;
+        }
+        else if (attackAction.WasReleasedThisFrame())
+        {
+            _isAttack = false;
         }
 
         UpdateAnimation();
@@ -59,6 +87,9 @@ public class PlayerController : MonoBehaviour
     {
         animator.SetInteger("HuongNhanVat", (int)_huongMatNhanVat);
         animator.SetBool("IsMoving", _isMoving);
-        Debug.Log("Hướng MẶt là " + _huongMatNhanVat);
+        animator.SetBool("IsAttack", _isAttack);
+
+        // Debug cho dễ check
+        Debug.Log($"Hướng mặt: {_huongMatNhanVat}, Moving: {_isMoving}, Attack: {_isAttack}");
     }
 }

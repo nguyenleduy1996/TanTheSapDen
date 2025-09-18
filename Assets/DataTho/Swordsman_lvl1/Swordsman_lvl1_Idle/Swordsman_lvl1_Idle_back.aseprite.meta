@@ -36,7 +36,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 32
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -139,7 +139,7 @@ ScriptedImporter:
       y: 4
       width: 20
       height: 27
-    spriteID: 375e2fa254628934894e9496e0648de2
+    spriteID: 2b37dbd711bb0934dbf06a6acba03b6c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -160,7 +160,7 @@ ScriptedImporter:
       y: 39
       width: 20
       height: 27
-    spriteID: 74ab4d71847b7064daabeceb122c11b8
+    spriteID: 54a7b155bf9db6a449fbc41162ab89b0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -181,7 +181,7 @@ ScriptedImporter:
       y: 74
       width: 20
       height: 27
-    spriteID: e3cee6e0c59a95446b5a5f80a1fba8e1
+    spriteID: 3e7472bf873287f4a9f941596af1de75
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -202,7 +202,7 @@ ScriptedImporter:
       y: 4
       width: 20
       height: 27
-    spriteID: 73d01bdc298e9434dbd5c4ed9093c090
+    spriteID: 7e80fdb3d1772b4479307cb28299accb
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -234,7 +234,7 @@ ScriptedImporter:
         y: 17
         width: 20
         height: 27
-      spriteId: 375e2fa254628934894e9496e0648de2
+      spriteId: 2b37dbd711bb0934dbf06a6acba03b6c
     - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
@@ -243,7 +243,7 @@ ScriptedImporter:
         y: 17
         width: 20
         height: 27
-      spriteId: 74ab4d71847b7064daabeceb122c11b8
+      spriteId: 54a7b155bf9db6a449fbc41162ab89b0
     - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
@@ -252,7 +252,7 @@ ScriptedImporter:
         y: 17
         width: 20
         height: 27
-      spriteId: e3cee6e0c59a95446b5a5f80a1fba8e1
+      spriteId: 3e7472bf873287f4a9f941596af1de75
     - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
@@ -261,13 +261,25 @@ ScriptedImporter:
         y: 17
         width: 20
         height: 27
-      spriteId: 73d01bdc298e9434dbd5c4ed9093c090
+      spriteId: 7e80fdb3d1772b4479307cb28299accb
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
   tileSets: []
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
