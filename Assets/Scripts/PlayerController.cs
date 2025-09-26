@@ -1,95 +1,89 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.InputSystem; // new Input System
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour
 {
-    [Header("Player Settings")]
-    public float moveSpeed = 1f;
-    public float attackSpeed = 1f;
-
-    private Rigidbody2D rb;
-    private Animator animator;
+    public float moveSpeed = 5f;
     private Vector2 moveInput;
-
-    private HuongNhanVat _huongMatNhanVat;
-    private bool _isMoving;
-    private bool _isAttack;
+    public Rigidbody2D rb;
+    public Animator animator;
 
     private InputAction moveAction;
-    private InputAction attackAction;
-
-    public enum HuongNhanVat { Trai = 1, Phai = 2, Len = 3, Xuong = 4 }
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        // rb = GetComponent<Rigidbody2D>();
 
-        // Move action với WASD
+        // định nghĩa input "Move" dùng WASD
         moveAction = new InputAction("Move", InputActionType.Value);
         moveAction.AddCompositeBinding("2DVector")
             .With("Up", "<Keyboard>/w")
             .With("Down", "<Keyboard>/s")
             .With("Left", "<Keyboard>/a")
             .With("Right", "<Keyboard>/d");
-
-        // Attack action với J
-        attackAction = new InputAction("Attack", InputActionType.Button, "<Keyboard>/j");
     }
 
     private void OnEnable()
     {
         moveAction.Enable();
-        attackAction.Enable();
     }
 
     private void OnDisable()
     {
         moveAction.Disable();
-        attackAction.Disable();
     }
 
     private void Update()
     {
-        // --- Movement ---
+        // đọc input mỗi frame
         moveInput = moveAction.ReadValue<Vector2>();
-        _isMoving = moveInput != Vector2.zero;
-
-        if (_isMoving)
-        {
-            if (Mathf.Abs(moveInput.x) > Mathf.Abs(moveInput.y))
-                _huongMatNhanVat = moveInput.x > 0 ? HuongNhanVat.Phai : HuongNhanVat.Trai;
-            else
-                _huongMatNhanVat = moveInput.y > 0 ? HuongNhanVat.Len : HuongNhanVat.Xuong;
-        }
-
-        // --- Attack ---
-        if (attackAction.WasPressedThisFrame())
-        {
-            _isAttack = true;
-        }
-        else if (attackAction.WasReleasedThisFrame())
-        {
-            _isAttack = false;
-        }
-
-        UpdateAnimation();
     }
+
+
+
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
+        // di chuyển nhân vật theo input
+        CapNhatViTriNhanVat();
+        CapNhatHuongMat2Chieu();
+        CapNhatAniamtion();
+        
+      //  DebugGUIHelper.Log("moveInput: " + moveInput);
     }
 
-    private void UpdateAnimation()
+    //
+    private void CapNhatViTriNhanVat()
     {
-        animator.SetInteger("HuongNhanVat", (int)_huongMatNhanVat);
-        animator.SetBool("IsMoving", _isMoving);
-        animator.SetBool("IsAttack", _isAttack);
-
-        // Debug cho dễ check
-        Debug.Log($"Hướng mặt: {_huongMatNhanVat}, Moving: {_isMoving}, Attack: {_isAttack}");
+        rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime); // cập nhật vị trí Player
     }
+
+    private void CapNhatAniamtion()
+    {
+
+        animator.SetFloat("horizontal", Mathf.Abs(moveInput.x));
+        animator.SetFloat("vertical", Mathf.Abs(moveInput.y));
+
+
+
+    }
+    
+
+    private void CapNhatHuongMat2Chieu()
+    {
+        Vector3 scale = transform.localScale;
+
+        if (moveInput.x > 0.01f)
+        {
+            scale.x = Mathf.Abs(scale.x); // quay phải
+        }
+        else if (moveInput.x < -0.01f)
+        {
+            scale.x = -Mathf.Abs(scale.x); // quay trái
+        }
+
+        transform.localScale = scale;
+    }
+
 }
