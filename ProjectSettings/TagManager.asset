@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags: []
   layers:
   - Default
@@ -41,3 +41,83 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: "C\u1ECF"
+    uniqueID: 3526908431
+    locked: 0
+  - name: "N\u01B0\u1EDBc"
+    uniqueID: 699896217
+    locked: 0
+  - name: "\u0110\u1EA5t - \u0110\u01B0\u1EDDng \u0111i"
+    uniqueID: 2585738977
+    locked: 0
+  - name: "C\xF4ng Tr\xECnh - Nh\xE0"
+    uniqueID: 407697315
+    locked: 0
+  - name: "S\xE0n nh\xE0"
+    uniqueID: 1605719911
+    locked: 0
+  - name: "C\u1EA7u thang trong nh\xE0"
+    uniqueID: 2799682777
+    locked: 0
+  - name: "V\xE1ch ng\u0103n"
+    uniqueID: 3577067087
+    locked: 0
+  - name: "T\u01B0\u1EDDng nh\xE0"
+    uniqueID: 1151122099
+    locked: 0
+  - name: "C\u1EEDa s\u1ED5"
+    uniqueID: 3258328619
+    locked: 0
+  - name: "Th\u1EA3m"
+    uniqueID: 2636246413
+    locked: 0
+  - name: "Gh\u1EBF ph\xF2ng kh\xE1ch"
+    uniqueID: 1784212127
+    locked: 0
+  - name: "B\xE0n ph\xF2ng kh\xE1ch"
+    uniqueID: 2719010137
+    locked: 0
+  - name: "Kh\u0103n tr\u1EA3i b\xE0n"
+    uniqueID: 3859859703
+    locked: 0
+  - name: "B\xECnh"
+    uniqueID: 1810716965
+    locked: 0
+  - name: "T\u1EE7 \u0111\u1ED3"
+    uniqueID: 3719970953
+    locked: 0
+  - name: "B\xE0n hoa"
+    uniqueID: 3025799069
+    locked: 0
+  - name: Hoa_1
+    uniqueID: 2925153965
+    locked: 0
+  - name: Tranh
+    uniqueID: 3056892895
+    locked: 0
+  - name: "T\u1EE7 s\xE1ch"
+    uniqueID: 3278262757
+    locked: 0
+  - name: "\u1ED0ng kh\xF3i trong nh\xE0"
+    uniqueID: 1624802089
+    locked: 0
+  - name: "Gi\u01B0\u1EDDng"
+    uniqueID: 2453042007
+    locked: 0
+  - name: "N\u1ED9i th\u1EA5t"
+    uniqueID: 2230371913
+    locked: 0
+  - name: "C\u1EEDa ch\xEDnh"
+    uniqueID: 16492107
+    locked: 0
+  - name: "M\xE1i nh\xE0"
+    uniqueID: 2308099497
+    locked: 0
+  - name: "C\xE2y c\u1ED1i - Trang Tr\xED"
+    uniqueID: 1737739849
+    locked: 0
+  - name: Player
+    uniqueID: 1865073521
+    locked: 0
+  m_RenderingLayers:
+  - Default
