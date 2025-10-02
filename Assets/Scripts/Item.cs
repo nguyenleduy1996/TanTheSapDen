@@ -30,8 +30,11 @@ public class Item : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log("Update Item: " + playerInRange);
         if (playerInRange && Keyboard.current.eKey.wasPressedThisFrame)
         {
+            Debug.Log("Update Item");
+
             if (inventoryManager != null)
             {
                 inventoryManager.AddItem(this);

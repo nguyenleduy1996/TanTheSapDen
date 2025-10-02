@@ -13,13 +13,15 @@ public class PlayerController : MonoBehaviour
     private InputAction attackAction;
 
     private PlayerCombat playerCombat;
+
     private void Awake()
     {
         // rb = GetComponent<Rigidbody2D>();
         playerCombat = GetComponent<PlayerCombat>();
         // định nghĩa input "Move" dùng WASD
         moveAction = new InputAction("Move", InputActionType.Value);
-        moveAction.AddCompositeBinding("2DVector")
+        moveAction
+            .AddCompositeBinding("2DVector")
             .With("Up", "<Keyboard>/w")
             .With("Down", "<Keyboard>/s")
             .With("Left", "<Keyboard>/a")
@@ -53,11 +55,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // tự động trở lại Idle khi hết thời gian đánh
-        
     }
-
-
-
 
     private void FixedUpdate()
     {
@@ -65,8 +63,8 @@ public class PlayerController : MonoBehaviour
         CapNhatViTriNhanVat();
         CapNhatHuongMat2Chieu();
         CapNhatAniamtion();
-        
-      //  DebugGUIHelper.Log("moveInput: " + moveInput);
+
+        //  DebugGUIHelper.Log("moveInput: " + moveInput);
     }
 
     //
@@ -77,14 +75,9 @@ public class PlayerController : MonoBehaviour
 
     private void CapNhatAniamtion()
     {
-
         animator.SetFloat("horizontal", Mathf.Abs(moveInput.x));
         animator.SetFloat("vertical", Mathf.Abs(moveInput.y));
-
-
-
     }
-    
 
     private void CapNhatHuongMat2Chieu()
     {
@@ -101,6 +94,4 @@ public class PlayerController : MonoBehaviour
 
         transform.localScale = scale;
     }
-
 }
-

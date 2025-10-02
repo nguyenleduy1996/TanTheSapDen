@@ -4,7 +4,6 @@ using UnityEngine.InputSystem; // new Input System
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerCombat : MonoBehaviour
 {
-
     public Animator anim;
 
     public float colldown = 2;
@@ -15,8 +14,9 @@ public class PlayerCombat : MonoBehaviour
         if (timer > 0)
         {
             timer -= Time.deltaTime;
-        }       
+        }
     }
+
     public void Attack()
     {
         if (timer <= 0)
@@ -25,9 +25,9 @@ public class PlayerCombat : MonoBehaviour
             timer = colldown;
         }
     }
-     public void End_Attack()
+
+    public void End_Attack()
     {
         anim.SetBool("IsAttacking", false);
     }
 }
-
